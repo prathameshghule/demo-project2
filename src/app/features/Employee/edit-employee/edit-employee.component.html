@@ -1,0 +1,90 @@
+<div class="container">
+    <h1 class="mt-3">Edit Employee</h1>
+    <ng-container *ngIf="employee; else notFound">
+        <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+            <div class="mt-2">
+                <div class="mt-3">
+                    <label class="form-label" for="employeeId">EmpId </label>
+                    <input type="text" disabled
+                    id="EmpId"
+                    class="form-control"
+                    name="employeeEmpId"
+                    value="{{employee.empId}}">
+                </div>
+                <div class="mt-3">
+                    <label class="form-label" for="employeeName">Name </label>
+                    <input type="text"
+                    id="employeeName"
+                    class="form-control"
+                    name="employeeName"
+                      [(ngModel)]="employee.name">
+                </div>
+                <div class="mt-3">
+                    <label class="form-label" for="employeeeMail">Email </label>
+                    <input type="text" 
+                    id="employeeEmail"
+                    class="form-control"
+                    name="employeeEmail"
+                    [(ngModel)]="employee.email">
+                </div>
+                <div class="mt-3">
+                    <label class="form-label" for="employeeMobileNumber">Mobile Number </label>
+                    <input type="text" 
+                    id="employeeMobileNumber"
+                    class="form-control"
+                    name="employeeMobileNumber"
+                    [(ngModel)]="employee.mobileNumber">
+                </div>
+                <div class="mt-3">
+                    <label class="form-label" for="employeeGender">Gender </label>
+                    <select type="text" 
+                    id="employeeGender"
+                    class="form-control"
+                    name="employeeGender"
+                    [(ngModel)]="employee.gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="mt-3">
+                    <label class="form-label" for="employeeAddress">Address </label>
+                    <input type="text" 
+                    id="Address"
+                    class="form-control"
+                    name="employeeAddress"
+                    [(ngModel)]="employee.address">
+                </div>
+                <div class="mt-3">
+                    <label class="form-label" for="employeeQualification">Qualification </label>
+                    <input type="text" 
+                    id="employeeQualification"
+                    class="form-control"
+                    name="employeeQualification"
+                    [(ngModel)]="employee.qualification">
+                </div>
+                <div class="mt-3">
+                    <label class="form-label" for="employeeDesignation">Designation </label>
+                    <input type="text" 
+                    id="employeeDesignation"
+                    class="form-control"
+                    name="employeeDesignation"
+                    [(ngModel)]="employee.designation">
+                </div>
+                <div class="mt-3 d-flex">
+                    <button type="submit" class="btn btn-primary"> Save </button>
+                    <button type="button" class="btn btn-danger ms-3"
+                    (click)="onDelete()"
+                    >Delete </button>
+
+                </div>
+            </div>
+        </form>
+
+    </ng-container>
+    <ng-template #notFound>
+        <div class="alert alert-warning" role="alert">
+            Employee not found!
+          </div>
+
+    </ng-template>
+</div>

@@ -1,0 +1,41 @@
+<div class="container"> 
+    <h1 class="mt-3">Employee List</h1>
+    <div class="d-flex justify-content-end mt-3">
+      <a [routerLink]="['/admin/employees/add']" class="btn btn-primary"> Add Employee</a>
+    </div>
+
+    <ng-container *ngIf="employee$ | async as employees">
+      <table class="table table-bordered mt-3">
+        <thead>
+          <tr>
+            <th>EmpId</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>MobileNumber</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Qualification</th>
+            <th>Designation</th>
+            <th> Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{employee.empId}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.mobileNumber}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.address}}</td>
+            <td>{{employee.qualification}}</td>
+            <td>{{employee.designation}}</td>
+            <td>
+              <a class="btn btn-light" [routerLink]="['/admin/employees',employee.empId]">Edit </a>
+            </td>
+          
+          </tr>
+
+        </tbody>
+      </table>
+    </ng-container>
+</div>

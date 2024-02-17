@@ -1,0 +1,51 @@
+<div class="container">
+    <h1 class="mt-3">Add Employee </h1>
+    <form #form="ngForm"(ngSubmit)="onFormSubmit()">
+        <div class="mt-2">
+
+            <div class="mt-3">
+                <label class="form-label">Name</label>
+                <input type="text" Id="Name" class="form-control" name="Name"[(ngModel)]="model.name">
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label">Email</label>
+                <input type="text" Id="Email" class="form-control" name="Email"[(ngModel)]="model.email">
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label">Mobile Number</label>
+                <input type="text" Id="mobileNumber" class="form-control" name="mobileNumber"[(ngModel)]="model.mobileNumber">
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label">Gender</label>
+                <select type="text" Id="Gender" class="form-control" name="Gender"[(ngModel)]="model.gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label">Address</label>
+                <input type="text" Id="Address" class="form-control" name="Address"[(ngModel)]="model.address">
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label">Qualification</label>
+                <input type="text" Id="Qualification" class="form-control" name="Qualification"[(ngModel)]="model.qualification">
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label">Designation</label>
+                <input type="text" Id="Designation" class="form-control" name="Designation"[(ngModel)]="model.designation">
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary ">Save</button>
+            </div>
+
+
+
+        </div>
+    </form>
+</div>
